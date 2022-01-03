@@ -111,7 +111,7 @@
             <v-btn
                 color="primary"
                 @click="$bubble('nextStep')"
-                :disabled="$root.$data.zipBlob === null"
+                :disabled="$root.$data.userdataBlob === null"
                 >Next <v-icon dark right>mdi-arrow-right</v-icon></v-btn
             >
             <v-btn text @click="$bubble('prevStep')">Back</v-btn>
@@ -179,14 +179,21 @@ export default {
                 );
                 await this.blobStore.init();
                 let blob = await this.blobStore.download(
-                    release.url,
+                    release.fastbooturl,
+                    (progress) => {
+                        this.downloadProgress = progress * 100;
+                    }
+                );
+                let blob2 = await this.blobStore.download(
+                    release.userdataurl,
                     (progress) => {
                         this.downloadProgress = progress * 100;
                     }
                 );
 
                 this.downloadProgress = 100;
-                this.$root.$data.zipBlob = blob;
+                this.$root.$data.fastbootBlob = blob;
+                this.$root.$data.userdataBlob = blob2;
                 this.error = null;
 
                 if (this.firstDownload) {

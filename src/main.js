@@ -84,7 +84,8 @@ new Vue({
     vuetify,
     data: {
         product: null,
-        zipBlob: null,
+        userdataBlob: null,
+        fastbootBlog: null,
         release: null,
         installType: null,
         ...Config,

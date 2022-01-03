@@ -28,7 +28,7 @@
                     on your device during the install.
                 </p>
                 <p>
-                    Your phone will restart several times, but
+                    Your watch will restart several times, but
                     <strong>don’t touch it.</strong> Watch the progress bar
                     on this page instead.
                 </p>
@@ -181,12 +181,10 @@ export default {
                 this.saEvent(
                     `install_build__${this.$root.$data.product}_${this.$root.$data.release.version}_${this.$root.$data.release.variant}`
                 );
-                let blob = this.$root.$data.zipBlob;
-                await this.device.flashFactoryZip(
-                    blob,
-                    this.$root.$data.installType === "clean",
-                    this.reconnectCallback,
-                    (action, item, progress) => {
+
+                this.installStatus = `Flashing boot`;
+                let blob = this.$root.$data.fastbootBlob;
+                await this.device.flashBlob("boot", blob, (action, item, progress) => {
                         let userAction = fastboot.USER_ACTION_MAP[action];
                         let userItem =
                             item === "avb_custom_key"
@@ -195,8 +193,20 @@ export default {
                         this.installStatus = `${userAction} ${userItem}`;
                         this.installStatusIcon = INSTALL_STATUS_ICONS[action];
                         this.installProgress = progress * 100;
-                    }
-                );
+                });
+
+                this.installStatus = `Flashing userdata image`;
+                let blob2 = this.$root.$data.userdataBlob;
+                await this.device.flashBlob("userdata", blob2, (action, item, progress) => {
+                        let userAction = fastboot.USER_ACTION_MAP[action];
+                        let userItem =
+                            item === "avb_custom_key"
+                                ? "verified boot key"
+                                : item;
+                        this.installStatus = `${userAction} ${userItem}`;
+                        this.installStatusIcon = INSTALL_STATUS_ICONS[action];
+                        this.installProgress = progress * 100;
+                });
 
                 this.installStatus = `Restarting into ${this.$root.$data.OS_NAME}`;
                 await this.device.reboot("");
