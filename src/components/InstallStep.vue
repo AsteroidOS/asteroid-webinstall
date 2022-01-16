@@ -182,28 +182,26 @@ export default {
                     `install_build__${this.$root.$data.product}_${this.$root.$data.release.version}_${this.$root.$data.release.variant}`
                 );
 
+                this.installStatus = `Flashing userdata`;
+                let blob2 = this.$root.$data.userdataBlob;
+                await this.device.flashBlob("userdata", blob2, (action, item, progress) => {
+                        let userItem =
+                            item === "avb_custom_key"
+                                ? "verified boot key"
+                                : item;
+                        this.installStatus = `Flashing AsteroidOS image ${userItem} ...`;
+                        this.installStatusIcon = INSTALL_STATUS_ICONS[action];
+                        this.installProgress = progress * 50;
+                });
+
                 this.installStatus = `Flashing boot`;
                 let blob = this.$root.$data.fastbootBlob;
                 await this.device.flashBlob("boot", blob, (action, item, progress) => {
-                        let userAction = fastboot.USER_ACTION_MAP[action];
                         let userItem =
                             item === "avb_custom_key"
                                 ? "verified boot key"
                                 : item;
-                        this.installStatus = `${userAction} ${userItem}`;
-                        this.installStatusIcon = INSTALL_STATUS_ICONS[action];
-                        this.installProgress = progress * 100;
-                });
-
-                this.installStatus = `Flashing userdata image`;
-                let blob2 = this.$root.$data.userdataBlob;
-                await this.device.flashBlob("userdata", blob2, (action, item, progress) => {
-                        let userAction = fastboot.USER_ACTION_MAP[action];
-                        let userItem =
-                            item === "avb_custom_key"
-                                ? "verified boot key"
-                                : item;
-                        this.installStatus = `${userAction} ${userItem}`;
+                        this.installStatus = `Flashing boot ${userItem} ...`;
                         this.installStatusIcon = INSTALL_STATUS_ICONS[action];
                         this.installProgress = progress * 100;
                 });

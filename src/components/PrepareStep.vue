@@ -6,9 +6,12 @@
             <div class="text-body-1">
                 <p>
                     This is an easy way to install
-                    {{ $root.$data.OS_NAME }} on your device. You’ll need an
+                    {{ $root.$data.OS_NAME }} on your smart watch. You’ll need an
                     <strong>unlocked</strong> model of one of the supported
-                    devices:
+                    devices. If your watch is not unlocked please follow the
+                    instructions on <a href="https://asteroidos.org/install" target="_blank">asteroidos.org</a>
+                    for your specific model. Currently this installer supports
+                    the following devices:
                 </p>
             </div>
 

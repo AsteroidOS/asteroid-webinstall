@@ -5,20 +5,13 @@
 
             <div class="text-body-1">
                 <p>
-                    Put your device into bootloader mode by restarting it and
-                    holding the
-                    <strong>volume down</strong> button until you see a
-                    <span class="red--text text--darken-3">red</span> warning
-                    sign or
-                    <span class="green--text text--darken-3">green</span>
-                    Android robot.
+                    Put your device into bootloader mode by using
+                    <code>adb reboot bootloader</code> or by following
+                    our instructions on <a href="https://asteroidos.org/wiki/useful-commands/#boot-to-fastboot-bootloader-menu" target="_blank">asteroidos.org</a>.
                 </p>
                 <p>
-                    Once your device is in bootloader mode, plug it into the
-                    computer or device you’re installing from. Make sure you use
-                    a
-                    <strong>high-quality</strong> USB cable, as many cables will
-                    cause issues. Avoid USB hubs if possible.
+                    Make sure you use a <strong>high-quality</strong> USB cable,
+                    as many cables will cause issues. Avoid USB hubs if possible.
                 </p>
                 <p>
                     Your USB cable needs to be able to copy files. Charging-only

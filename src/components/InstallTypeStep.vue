@@ -3,13 +3,13 @@
         <div class="mt-n4">
             <h6 class="text-h6 pb-4">Choose an install type</h6>
 
-            <div class="text-body-1">
+            <!--<div class="text-body-1">
                 <p>
                     This installer can help you update from an older version of
                     {{ $root.$data.OS_NAME }} or switch to it from another OS,
                     but you need to choose which one you want.
                 </p>
-            </div>
+            </div>-->
         </div>
 
         <div class="d-flex flex-wrap justify-space-around">
@@ -45,7 +45,7 @@
                 </v-card-subtitle>
             </v-card>
 
-            <v-card
+<!--            <v-card
                 outlined
                 max-width="16rem"
                 class="ma-4 d-flex flex-column justify-space-between"
@@ -74,7 +74,7 @@
                         {{ $root.$data.OS_NAME }}. Your data won’t be affected.
                     </v-card-subtitle>
                 </div>
-            </v-card>
+            </v-card> -->
         </div>
 
         <div class="d-flex justify-space-between flex-row-reverse">
