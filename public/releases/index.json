@@ -13,6 +13,20 @@
                 "userdataurl": "https://test.jrtberlin.de/releases/files/sturgeon/asteroid-image-sturgeon.ext4",
 		"fastbooturl": "https://test.jrtberlin.de/releases/files/sturgeon/zImage-dtb-sturgeon.fastboot"
             }
-        ]
+        ],
+	"dory": [
+	    {
+		"version": "1.0",
+		"variant": "stable",
+		"userdataurl": "",
+		"fastbooturl": ""
+		},
+	    {
+		"version": "2.0",
+		"variant": "nightly",
+		"userdataurl": "https://test.jrtberlin.de/releases/files/dory/asteroid-image-dory.ext4",
+		"fastbooturl": "https://test.jrtberlin.de/releases/files/dory/zImage-dtb-dory.fastboot"
+	    }
+	]
     }
 }
