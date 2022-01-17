@@ -51,6 +51,10 @@
             </div>
         </div>
 
+        <v-btn
+            color="primary"
+            @click="requestConnect"
+            >adb reboot</v-btn>
         <div class="d-flex justify-space-between flex-row-reverse">
             <v-btn
                 color="primary"
@@ -66,7 +70,7 @@
 
 <script>
 export default {
-    props: ["device", "blobStore", "active"],
+    props: ["adb", "device", "blobStore", "active"],
 
     data: () => ({
         usbSupported: "usb" in navigator,
@@ -77,6 +81,13 @@ export default {
             if (newState) {
                 this.saEvent("step_prepare");
             }
+        },
+    },
+    methods: {
+        async requestConnect() {
+            let webusb = await this.adb.open("WebUSB");
+            let adb = await webusb.connectAdb("host::", () => {});
+            adb.reboot("bootloader");
         },
     },
 };

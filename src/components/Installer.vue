@@ -48,6 +48,7 @@
                 >
                     <prepare-step
                         :device="device"
+                        :adb="adb"
                         :blob-store="blobStore"
                         :active="curStep === -1"
                     />
@@ -438,6 +439,7 @@
 
 <script>
 import * as fastboot from "android-fastboot";
+import * as Adb from "../plugins/webadb.js";
 import { BlobStore } from "../core/download";
 import ConnectBanner from "./ConnectBanner";
 import PrepareStep from "./PrepareStep";
@@ -468,6 +470,7 @@ export default {
     },
 
     data: () => ({
+        adb: Adb,
         device: device,
         blobStore: blobStore,
         curStep: -1,
