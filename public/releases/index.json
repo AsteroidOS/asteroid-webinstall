@@ -27,6 +27,14 @@
 		"userdataurl": "https://test.jrtberlin.de/releases/files/dory/asteroid-image-dory.ext4",
 		"fastbooturl": "https://test.jrtberlin.de/releases/files/dory/zImage-dtb-dory.fastboot"
 	    }
-	]
+	],
+        "bass": [
+            {
+                "version": "2.0",
+                "variant": "nightly",
+                "userdataurl": "https://test.jrtberlin.de/releases/files/bass/asteroid-image-bass.ext4",
+                "fastbooturl": "https://test.jrtberlin.de/releases/files/bass/zImage-dtb-bass.fastboot"
+            }
+        ]
     }
 }
