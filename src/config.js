@@ -32,12 +32,12 @@ export default {
     },
     DONATION_LINKS: [
         {
-            title: "One-time donation",
+            title: "Donating",
             description:
-                "You can also make a one-time donation through PayPal. It doesn’t help with sustainable support, but every little bit is appreciated!",
-            highlight: false,
-            url: "https://paypal.me/",
-            icon: "paypal",
+                "You can make a one-time or recurring donation via OpenCollective. It doesn’t help with sustainable support, but every little bit is appreciated!",
+            highlight: true,
+            url: "https://opencollective.com/asteroidos/donate",
+            icon: "opencollective",
         },
     ],
 };

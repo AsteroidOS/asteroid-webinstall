@@ -30,6 +30,7 @@
             >
                 <v-card-title>
                     <div class="pr-2">
+                        <oc-icon v.if="donation.icon === 'oc'" />
                         <liberapay-icon v-if="donation.icon === 'liberapay'" />
                         <paypal-icon v-if="donation.icon === 'paypal'" />
                         <patreon-icon v-if="donation.icon === 'patreon'" />
@@ -57,13 +58,14 @@
 </style>
 
 <script>
+import ocIcon from "./icons/ocIcon.vue";
 import LiberapayIcon from "./icons/LiberapayIcon.vue";
 import PaypalIcon from "./icons/PaypalIcon.vue";
 import PatreonIcon from "./icons/PatreonIcon.vue";
 import { getDeviceName } from "../core/devices";
 
 export default {
-    components: { LiberapayIcon, PaypalIcon, PatreonIcon },
+    components: { ocIcon, LiberapayIcon, PaypalIcon, PatreonIcon },
     name: "FinishStep",
 
     props: ["device", "blobStore", "active"],
