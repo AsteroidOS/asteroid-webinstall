@@ -8202,9 +8202,9 @@ vuetify-loader@^1.7.0:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@^2.4.0:
-  version "2.4.9"
-  resolved "https://registry.npmjs.org/vuetify/-/vuetify-2.4.9.tgz"
+vuetify@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.10.tgz#b86cd7a97bf8cd3828a72c349795b5b3c539ebc2"
 
 watchpack@^2.4.0:
   version "2.4.0"
