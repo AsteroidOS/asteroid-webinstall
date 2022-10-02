@@ -13,7 +13,7 @@
         "android-fastboot": "^1.0.7",
         "core-js": "^3.6.5",
         "vue": "^2.6.11",
-        "vuetify": "^2.4.0"
+        "vuetify": "^2.6.10"
     },
     "devDependencies": {
         "@vue/cli": "^5.0.8",
