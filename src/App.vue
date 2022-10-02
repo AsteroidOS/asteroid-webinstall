@@ -19,7 +19,7 @@
                             :elevation="$vuetify.breakpoint.mobile ? 0 : 4"
                             class="d-flex flex-column"
                         >
-                            <Installer />
+                            <MainInstaller />
                         </v-sheet>
                     </v-col>
 
@@ -106,13 +106,13 @@
 </style>
 
 <script>
-import Installer from "./components/Installer";
+import MainInstaller from "./components/MainInstaller";
 
 export default {
     name: "App",
 
     components: {
-        Installer,
+        MainInstaller,
     },
 
     data: () => ({
